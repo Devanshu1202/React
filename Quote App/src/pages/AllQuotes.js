@@ -5,11 +5,6 @@ import useHttp from "../hooks/use-http";
 import { getAllQuotes } from "../lib/api";
 import NoQuotesFound from "../components/quotes/NoQuotesFound";
 
-const Dummy_quotes = [
-  { id: "q1", author: "Max", text: "duummmy 1" },
-  { id: "q2", author: "Max2", text: "duummmy 2" },
-  { id: "q3", author: "Max3", text: "duummmy 3" },
-];
 const AllQuotes = () => {
   const {
     sendRequest,

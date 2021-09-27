@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import CommentsList from "../comments/CommentsList";
 import classes from "./Comments.module.css";
 import NewCommentForm from "./NewCommentForm";
@@ -16,7 +16,7 @@ const Comments = () => {
   const { quoteId } = params;
 
   useEffect(() => {
-    sendRequest(params.quoteId);
+    sendRequest(quoteId);
   }, [quoteId, sendRequest]);
 
   const addedCommentHandler = useCallback(() => {

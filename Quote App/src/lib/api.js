@@ -3,6 +3,7 @@ const FIREBASE_DOMAIN = "https://quote-react-default-rtdb.firebaseio.com";
 export async function getAllQuotes() {
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes.json`);
   const data = await response.json();
+  console.log(data);
 
   if (!response.ok) {
     throw new Error(data.message || "Could not fetch quotes.");
@@ -53,6 +54,11 @@ export async function addQuote(quoteData) {
   }
 
   return null;
+}
+
+export async function handleRemove(id) {
+  return ref("comments").child(id).remove();
+  return ref("quote").child(id).remove();
 }
 
 export async function addComment(requestData) {
